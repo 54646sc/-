@@ -1,13 +1,14 @@
-#include <stdio.h>
-#include <iostream> 
+#include <stdio.h> 
 int main(){
-	int ch = 0;
-	while((ch=getchar()) != EOF);
+	int x, y;
+	int i;
+	int n;
+	scanf("%d", &n);
+	x=1;
+	for(i=1;i<=n;i++)
 	{
-		if(ch>'9'|| ch<'0')
-		   
-		putchar(ch);
-		
+		x=x*i;
 	}
+	printf("%d", x);
 	return 0;
-} 
+}

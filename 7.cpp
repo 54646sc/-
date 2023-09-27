@@ -1,12 +1,11 @@
 #include <stdio.h>
 int main(){
-	int ch = 0;
-	while((ch=getchar()) != EOF);
+	int i=1;
+	do
 	{
-		if(ch>'9'|| ch<'0')
-		    continue;
-		putchar(ch);
-		
+		printf("%d ",i);
+		i++;
 	}
+	while(i<=10);
 	return 0;
-} 
+}
