@@ -1,9 +1,14 @@
 #include <stdio.h>
 int main(){
-	int x, y;
-	for(x=0, y=0; x<3 && y<5; x++, y++)
+	int a,b;
+	b=0;
+	for(a=1000;a<=2000;a++)
 	{
-		printf("s\n");
+		if((a%4==0 && a%100!=0) || (a%400==0))
+	    {
+		printf("%d ", a);
+	    b++;}
 	}
+	printf("\nb=%d\n", b);
 	return 0;
 }

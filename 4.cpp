@@ -1,10 +1,20 @@
-#include <stdio.h>
+#include <stdio.h> 
 int main(){
-	int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-	int i;
-	for(i=0; i<=9; i++)
+	int a,b;
+	b=0; 
+	for(a=1000;a<=2000;a++)
 	{
-		printf("%d ", arr[i]);
+		if(a%4==0 && a%100!=0)
+		    {
+			printf("%d ", a);
+			b++;
 	}
+	    else if(a%400==0)
+	    {
+		printf("%d ", a);
+	    b++;}
+	}
+	printf("%d", b);
+	
 	return 0;
 }

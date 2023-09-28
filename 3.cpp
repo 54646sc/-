@@ -1,11 +1,14 @@
 #include <stdio.h>
 int main(){
-	int i;
-	for(i=1; i<11; i++)
+	int m, n, r;
+	scanf("%d%d", &m, &n);
+	while(m%n!=0)
 	{
-		if(i==5)
-		    continue;
-		printf("%d ", i);
+		r=m%n;
+		m=n;
+		n=r;
 	}
+	printf("%d", n);
+	
 	return 0;
 }

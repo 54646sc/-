@@ -1,9 +1,10 @@
 #include <stdio.h>
 int main(){
 	int i;
-	for(i=1; i<11; i++)
+	for(i=1;i<=100;i++)
 	{
-		printf("%d ", i);
+		if(i%3==0)
+		    printf("%d N", i);
 	}
 	return 0;
-}
+} 

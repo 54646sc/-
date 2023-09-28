@@ -1,11 +1,21 @@
 #include <stdio.h>
 int main(){
-	int ch = 0;
-	while((ch=getchar()) != EOF)
-	{
-		if(ch<'0' || ch>'9')
-		    continue;
-		putchar(ch);
-	}
-	return 0;
-} 
+
+int a, b, c;
+scanf("%d%d%d", &a, &b, &c);
+if(a<b)
+{
+	int tmp = a;
+	a=b;
+	b=tmp;
+ } 
+ if(b<c)
+ {
+ 	int tmp=b;
+ 	b=c;
+ 	c=tmp;
+ 	
+ }
+ printf("%d%d%d", a, b, c);
+ return 0;
+}
