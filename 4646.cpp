@@ -1,16 +1,16 @@
 #include <stdio.h>
-int a(int n){
-	if(n%4==0&&n%100!=0 || n%400==0)
+int fact(int n)
+{
+	if(n<=2)
 	return 1;
 	else
-	return 0;
-} 
+	return fact(n-1)+fact(n-2);
+}
 int main(){
-	int i;
-	for(i=1000;i<2000;i++)
-	{
-		if(1==a(i))
-		printf("%d ", i);
-	}
+	int ret,n;
+	scanf("%d",&n);
+	ret=fact(n);
+	printf("%d", ret);
+	
 	return 0;
 }
