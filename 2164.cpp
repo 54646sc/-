@@ -1,6 +1,5 @@
 #include <stdio.h>
 int main(){
-	int a =(int)3.12;
-	printf("%d", a);
+	printf("%d\n", sizeof(char*));
 	return 0;
 }
