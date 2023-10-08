@@ -1,23 +1,20 @@
+//自定义strcpy库函数的优化版加上应用 
 #include <stdio.h>
-#include <string.h>
-#include <windows.h>
-int main(){
-	char arr1[] = "welcome to bit!!!!!!";
-	char arr2[] = "####################";
-	int left = 0;
-	int right = strlen(arr1)-1;
-	while(left<=right)
+#include <assert.h>
+char* my_strcpy(char* arr1, const char* arr2)
+{
+	char* ret = arr1;
+	assert(arr1!=NULL);
+	assert(arr2!=NULL);
+	while(*arr1++ = *arr2++)
 	{
-		arr2[left]=arr1[left];
-		arr2[right]=arr1[right];
-		printf("%s\n", arr2);
-		Sleep(1000);
-		system("cls");
-		left++;
-		right--;
-		
+		;
 	}
-	printf("welcome to bit!!!!!!"); 
-	
+    return ret;
+	}
+int main(){
+	char arr1[]="###";
+	char arr2[]="jjj";
+	printf("%s\n", my_strcpy(arr1, arr2));
 	return 0;
 }
