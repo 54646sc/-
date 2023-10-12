@@ -1,20 +1,19 @@
-//自定义strcpy库函数的优化版加上应用 
 #include <stdio.h>
-#include <assert.h>
-char* my_strcpy(char* arr1, const char* arr2)
+int sub(int x,int y)
 {
-	char* ret = arr1;
-	assert(arr1!=NULL);
-	assert(arr2!=NULL);
-	while(*arr1++ = *arr2++)
-	{
-		;
-	}
-    return ret;
-	}
+	return x-y;
+}
+int add(int x,int y)
+{
+	return x+y;
+}
 int main(){
-	char arr1[]="###";
-	char arr2[]="jjj";
-	printf("%s\n", my_strcpy(arr1, arr2));
+	int (*p[3])(int, int)={0,sub,add};
+	int input;
+	printf("选择1，减 选择2，加");
+	scanf("%d", &input);
+	int a =1;int b=2;int ret;
+	ret = p[input](a,b);
+	printf("%d",ret);
 	return 0;
 }
