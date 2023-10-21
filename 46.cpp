@@ -1,22 +1,58 @@
+//回调函数的计算机应用； 
 #include <stdio.h>
+int add(int x,int y)
+{
+	return x+y;
+}
+int sub(int x,int y)
+{
+	return x-y;
+}
+int mul(int x,int y)
+{
+	return x*y;
+}
+int div(int x,int y)
+{
+	return x/y;
+}
+void hanshu(int (*p)(int,int))
+{
+	int a,b;
+	printf("请输入两个操作数：\n"); 
+	scanf("%d%d",&a,&b);
+	int ret =p(a,b);
+	printf("%d\n",ret);
+}
 int main(){
-	int arr[] = {1,2,3,4,1,2,3,4,5};
-	int i,j;
 	
-	int sz = sizeof(arr)/sizeof(arr[0]);
-	for(i=0;i<sz;i++)
+	int input;
+	do{
+		printf("选择1为加，2为减，三为乘，4为除，0为退出\n");
+		scanf("%d",&input);
+	
+	switch(input)
 	{
-		int count = 0;
-		for(j=0;j<sz;j++)
-		{
-			if(arr[i]==arr[j])
-			count++;
-		}
-		if(count==1)
-		{
-			printf("找到了，单身狗是%d", arr[i]);
+		case 1:
+			hanshu(add);
 			break;
-		}
-	}
+		case 2:
+			hanshu(sub);
+			break;
+		case 3:
+		    hanshu(mul);
+		    break;
+		case 4:
+		    hanshu(div);
+		    break;
+		case 0:
+		    printf("退出程序\n");
+		    break;
+		default:
+		    printf("输入错误，请重新选择\n");	
+		    break;
+	}}
+	while(input);
+	
 	return 0;
 }
