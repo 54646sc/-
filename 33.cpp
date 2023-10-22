@@ -1,9 +1,11 @@
-//精确到小数点后两位
+//四舍五入
 #include <stdio.h>
+#include <math.h>
 int main(){
 	double a;
 	scanf("%lf",&a);
-	a=(int)(a*100+0.5)/100.0;
-	printf("%.2lf",a);
+	int y=round(a);
+	printf("%d",y);
 	return 0;
+	
 }
