@@ -1,13 +1,8 @@
 #include <stdio.h>
-#include <iostream> 
 int main(){
-	int ch = 0;
-	while((ch=getchar()) != EOF);
-	{
-		break;
-		   
-		putchar(ch);
-		
-	}
-	return 0;
-} 
+    double a,b;
+    scanf("%lf%lf",a,b);
+    double c=1.0*a*b/(a+b);
+    printf("%lf",c);
+    return 0;
+}
