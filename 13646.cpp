@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 int main(){
-	int ret =round(3.6);
-	printf("%d",ret);
+	int a=round(3.3);
+	printf("%d",a);
+	
 	return 0;
-} 
+}

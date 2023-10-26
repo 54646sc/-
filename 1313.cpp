@@ -1,18 +1,24 @@
+//ÅĞ¶ÏËÄ¼¾
 #include <stdio.h>
 int main(){
-    int arr[8];
-    int i;
-    for(i=0;i<8;i++)
-    {
-        scanf("%d",&arr[i]);
-
-    }
-    if((arr[7]==arr[0]*1+arr[1]*2+arr[2]*3+arr[3]*4+arr[4]*5+arr[5]*6+arr[6]*7)%10)
-    {
-        printf("0");
-    }
-    else {
-        printf("1");
-    }
-    return 0;
-}
+	int a;
+	scanf("%d",&a);
+	a=a%10+10*((a/10)%10);
+	if(a>=3&&a<=5)
+	{
+		printf("´ºÌì\n");
+	}
+	else if(a>=6&&a<=8)
+	{
+		printf("summer\n");
+	}
+	else if(a>=9&&a<=11)
+	{
+		printf("fall\n");
+	}
+	else
+	{
+		printf("winter\n");
+	}
+	return 0;
+} 

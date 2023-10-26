@@ -1,16 +1,27 @@
 #include <stdio.h>
 int main(){
-char a;
-scanf("%c",&a);
-for(int i=0;i<3;i++)
-{
-
-    for(int j=0;j<3;j++)
+    int a,b,c,d;
+    scanf("%d%d%d%d",&a,&b,&c,&d);
+    if(a==c)
     {
-        printf("%c ",a);
+        if(b<d)
+        {
+            printf("u");
+        }
+        else {
+        printf("d");}
+        }
+        else {
+        if(a>c)
+        {
+            printf("l");
+
+        }
+        else {
+        printf("r");
+        }
+        }
         
-    }
-    printf("\n");
-}
+    
     return 0;
 }
