@@ -1,14 +1,21 @@
 #include <stdio.h>
 int main(){
-	int a,b;
-	b=0;
-	for(a=1000;a<=2000;a++)
-	{
-		if((a%4==0 && a%100!=0) || (a%400==0))
-	    {
-		printf("%d ", a);
-	    b++;}
-	}
-	printf("\nb=%d\n", b);
-	return 0;
+    int n;
+    scanf("%d",&n);
+    int a,b=0,c,d;
+    for(int i=1;i<=n;i++)
+    {
+        a=i;
+        while(a)
+        {
+            c=a%10;
+            a/=10;
+            b=c+b*10;
+        }
+        if(b==i)
+        {
+            printf("%d\n",i);
+        }
+    }
+    return 0;
 }

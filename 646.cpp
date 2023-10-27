@@ -1,9 +1,10 @@
-//精确到小数点后两位
 #include <stdio.h>
 int main(){
-	double a;
-	scanf("%lf",&a);
-	a=(int)(a*100+0.5)/100.0;
-	printf("%.2lf",a);
+	char ch;
+	while((ch=getchar())!=EOF)
+	{
+		getchar();
+		putchar(ch);
+	}
 	return 0;
 }
