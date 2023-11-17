@@ -1,9 +1,8 @@
 #include <stdio.h>
+#include <ctype.h>
 int main(){
-	
-	if(0.0==-0.0)
-	{
-		printf("ПаµИ");
-	}
+	char arr='0';
+	int ret = isdigit(arr);
+	printf("%d",ret);
 	return 0;
-} 
+}
