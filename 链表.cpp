@@ -50,11 +50,20 @@ void bianli(struct node* header)
 	}
 	else
 	{
+		
 		struct node* pcurrent =header->next;
+		if(pcurrent==NULL)
+		{
+			printf("NULL\n");
+		 } 
 		while(pcurrent!=NULL)
 		{
-			printf("%d ",pcurrent->data);
+			printf("%d",pcurrent->data);
 			pcurrent =pcurrent->next;
+			if(pcurrent!=NULL)
+			{
+				printf("->"); 
+			}
 		}
 		
 	}

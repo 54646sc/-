@@ -7,9 +7,15 @@ struct node
 };
 struct node* chushihua();
 void bianli(struct node* header);
+void shanchu(struct node* header,int remove);
+
 int main()
 {
 	struct node* header = chushihua();
+	bianli(header);
+	int remove;
+	scanf("%d",&remove);
+	shanchu(header,remove);
 	bianli(header);
 	return 0;
 }
@@ -50,14 +56,53 @@ void bianli(struct node* header)
 	}
 	else
 	{
+		
 		struct node* pcurrent =header->next;
+		if(pcurrent==NULL)
+		{
+			printf("NULL\n");
+		 } 
 		while(pcurrent!=NULL)
 		{
-			printf("%d ",pcurrent->data);
+			printf("%d",pcurrent->data);
 			pcurrent =pcurrent->next;
+			if(pcurrent!=NULL)
+			{
+				printf("->"); 
+			}
 		}
-		
+		printf("\n");
 	}
 	
 	
 }
+void shanchu(struct node* header,int remove)
+{
+	if(header==NULL)
+	{
+		return;
+	}
+	struct node*p1=header;
+	struct node* p2=p1->next;
+	while(p2!=NULL)
+	{
+		if(p2->data==remove)
+		break;
+		p1=p1->next;
+		p2=p2->next;
+	}
+	if(p2==NULL)
+	{
+		return;
+	}
+	p1->next=p2->next;
+	free(p2);
+	p2=NULL;
+}
+
+
+
+
+
+
+
