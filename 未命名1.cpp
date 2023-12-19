@@ -1,9 +1,14 @@
-#include <stdio.h>
-int main(){
-	int a, b, c, d, e;
-	scanf("%d%d%d%d%d", &a, &b, &c, &d, &e);
-	double f;
-	f = (a+b+c+d+e)/5.0;
-	printf("%.1lf", f); 
-	return 0;
+#include <iostream>
+using namespace std;
+int he(int a,int c)
+{
+	return a+c;
 }
+int main()
+{
+	int a=10;
+	int c=100;
+	int s=he(a,c);
+	cout<<s<<endl;
+	return 0;
+ } 
