@@ -1,6 +1,9 @@
+//两数相加
 #include <stdio.h>
 int main()
 {
-	printf("wei wen hua ming !\n"); 
-	return 0; 
- } 
+	int a,b;
+	scanf("%d%d",&a,&b);
+	printf("%d + %d = %d\n",a+b);
+	return 0;
+}
