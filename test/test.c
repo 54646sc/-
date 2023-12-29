@@ -1,52 +1,43 @@
-//快速排序
 #include <stdio.h>
-void hanshu(int *arr,int left,int right)
-{
-  int i,j;
-  i=left;
-  j=right;
-  if(i>j)
-  {
-    return ;
-  }
-  int temp=arr[left];
-  while(i<j)
-  {
-    while(i<j&&arr[j]>=temp)
-    {
-      j--;
-    }
-    while(i<j&&arr[i]<=temp)
-    {
-      i++;
-    }
-    if(i<j)
-    {
-      int a=arr[i];
-      arr[i]=arr[j];
-      arr[j]=a;
-    }
-  }
-  arr[left]=arr[i];
-  arr[i]=temp;
-  hanshu(arr,left,i-1);
-  hanshu(arr,i+1,right);
-}
+int n,m;
+
 int main()
 {
-  int n;
-  scanf("%d",&n);
-  int arr[n];
-  int i;
-  for(i=0;i<n;i++)
-  {
-    scanf("%d",&arr[i]);
-  }
-  hanshu(arr,0,n-1);
-  for(i=0;i<n;i++)
-  {
-    printf("%d ",arr[i]);
-  }
-
-  return 0;
+    int i,j,k;
+    scanf("%d%d",&n,&m);
+    int arr[n+1][n+1];
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            arr[i][j]=0;
+        }
+    }
+    int x1,y1,x2,y2;
+    for(k=0;k<m;k++)
+    {
+        scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+        for(i=x1;i<=x2;i++)
+        {
+            for(j=y1;j<=y2;j++)
+            {
+                if(arr[i][j]==0)
+                {
+                    arr[i][j]=1;
+                }
+                else
+                {
+                    arr[i][j]=0;
+                }
+            }
+        }
+    }
+    for(i=1;i<=n;i++)
+    {
+        for(j=1;j<=n;j++)
+        {
+            printf("%d",arr[i][j]);
+        }
+        printf("\n");
+    }
 }
