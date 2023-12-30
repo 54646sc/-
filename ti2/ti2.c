@@ -1,32 +1,56 @@
 #include <stdio.h>
-long long jiecheng(int x)
+int you(int a,int b)
 {
-    long long sum=1;
-    for(int i=1;i<=x;i++)
+    
+    if(a>b)
     {
-        sum*=i;
+        int temp=a;
+        a=b;
+        b=temp;
     }
-    return sum;
-}
-long long suanshu(int n,int m)
-{
-    long long a=jiecheng(n);
-    long long b=jiecheng(m);
-    long long c=jiecheng(n-m);
-    return a/b/c;
+    
+    
+    while(1)
+    {
+        int yushu=b%a;
+        if(yushu==0)
+        {
+            break;
+        }
+        b=a;
+        a=yushu;
+    }
+    if(a>1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
 }
 int main()
 {
-    int n;
+    int i,j,n;
     scanf("%d",&n);
-    printf("    1\n");
-    for(int i=1;i<n;i++)
+    int arr[n];
+    for(i=0;i<n;i++)
     {
-        for(int j=0;j<=i;j++)
-        {
-                        printf("%5lld",suanshu(i, j));
-        }
-        printf("\n");
+        scanf("%d",&arr[i]);
     }
+   
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(you(arr[i],arr[j]))
+            {
+                printf("%d %d\n",i+1,j+1);
+                goto X;
+            }
+        }
+    }
+    X:
+
     return 0;
 }

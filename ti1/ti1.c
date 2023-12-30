@@ -1,53 +1,43 @@
 #include <stdio.h>
+int n,m;
+
 int main()
 {
-    int n,m;
+    int i,j,k;
     scanf("%d%d",&n,&m);
-    int arr[n][m];
-    for(int i=0;i<n;i++)
+    int arr[n+1][n+1];
+    for(i=1;i<=n;i++)
     {
-        for(int j=0;j<m;j++)
+        for(j=1;j<=n;j++)
         {
-            scanf("%d",&arr[i][j]);
+            arr[i][j]=0;
         }
     }
-    int k;
-    scanf("%d",&k);
-    for(int i=0;i<k;i++)
+    int x1,y1,x2,y2;
+    for(k=0;k<m;k++)
     {
-        char ch;
-        getchar();
-        scanf("%c",&ch);
-        int a,b;
-        scanf("%d%d",&a,&b);
-        if(ch=='r')
+        scanf("%d%d%d%d",&x1,&y1,&x2,&y2);
+        for(i=x1;i<=x2;i++)
         {
-            int x[m];
-            for(int u=0;u<m;u++)
+            for(j=y1;j<=y2;j++)
             {
-                x[u]=arr[a-1][u];
-                arr[a-1][u]=arr[b-1][u];
-                arr[b-1][u]=x[u];
-            }
-        }
-        if(ch=='c')
-        {
-            int y[n];
-            for(int p=0;p<n;p++)
-            {
-                y[p]=arr[p][a-1];
-                arr[p][a-1]=arr[p][b-1];
-                arr[p][b-1]=y[p];
+                if(arr[i][j]==0)
+                {
+                    arr[i][j]=1;
+                }
+                else
+                {
+                    arr[i][j]=0;
+                }
             }
         }
     }
-    for(int i=0;i<n;i++)
+    for(i=1;i<=n;i++)
     {
-        for(int j=0;j<m;j++)
+        for(j=1;j<=n;j++)
         {
-            printf("%d ",arr[i][j]);
+            printf("%d",arr[i][j]);
         }
         printf("\n");
     }
-    return 0;
 }
